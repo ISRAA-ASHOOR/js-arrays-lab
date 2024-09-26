@@ -47,3 +47,82 @@ console.log('Exercise 9 result:', allFoods);
 
 const hasSoup = foods.includes('soup');
 console.log('Exercise 10 result:', hasSoup);
+
+// Exercise 11
+
+const odds = [];
+const nums = [100, 5, 23, 15, 21, 72, 9, 45, 66, 7, 81, 90];
+
+nums.forEach(num => {
+    if (num % 2 !== 0) {
+        // to make sure the number is not even (there will be a reminder if it's dividable by 2)
+        odds.push(num); 
+    }
+});
+
+console.log('Exercise 11 result:', odds);
+
+// Exercise 12
+
+const fizz = [];
+const buzz = [];
+const fizzbuzz = [];
+
+nums.forEach(num => {
+    if (num % 3 === 0 && num % 5 === 0) {
+        fizzbuzz.push(num); 
+    } else if (num % 5 === 0) {
+        buzz.push(num); 
+    } else if (num % 3 === 0) {
+        fizz.push(num); 
+    }
+});
+
+console.log('Exercise 12 Results:');
+console.log('  fizz:', fizz);
+console.log('  buzz:', buzz);
+console.log('  fizzbuzz:', fizzbuzz);
+
+// Exercise 13
+
+const numArrays = [
+	[100, 5, 23],
+	[15, 21, 72, 9],
+	[45, 66],
+	[7, 81, 90]
+];
+
+const numList = numArrays[numArrays.length-1];
+console.log('Exercise 13 result:', numList);
+
+// Exercise 14
+
+// first way (if we know where is the num)
+
+const num1 = numArrays[2][1];
+console.log('Exercise 14 result:', num1); 
+
+// second way (if we do not know where is the num)
+
+for (let x = 0; x < numArrays.length; x++) {
+    for (let y = 0; y < numArrays[x].length; y++) {
+        if (numArrays[x][y] === 66) {
+            num = 66;
+            break;
+        }
+    }
+}
+
+console.log('Exercise 14 result:', num);
+
+// Exercise 15
+
+let total = 0;
+
+numArrays.forEach(subArray => {
+    subArray.forEach(num => {
+        total += num;
+    });
+});
+
+console.log('Exercise 15 result:\n', total);
